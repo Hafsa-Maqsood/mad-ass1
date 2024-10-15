@@ -4,8 +4,8 @@ import { useState } from 'react';
 import React from 'react';
 import Icon  from 'react-native-vector-icons/FontAwesome5';
 
-//export default function App() {
-  /* function handlebutton() //button function
+export default function App() {
+  function handlebutton() //button function
  {
     console.log('button is click');
   } 
@@ -30,7 +30,7 @@ const [ishungary , setIsHungary]=useState(true)
     <Button title='submit' color={'green'} onPress={handlebutton} ></Button>   
     </View>
 
-  );*/
+  );
   /*const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -38,12 +38,12 @@ const [ishungary , setIsHungary]=useState(true)
     alignItems: 'center',
     justifyContent: 'center',
   },
-});*/
-export default function App() {
+});
+/*export default function App() {
   return (
     <View style={styles.parentContainer}>
     <View style={styles.searchContainer}>
-      <Icon name='search' size={18} color='red' style={styles.icon} />
+      <Icon name='search' size={18} color='#800080' style={styles.icon} />
       <TextInput
         style={styles.searchInput}
         placeholder='Search for doctors...'
@@ -55,39 +55,37 @@ export default function App() {
 
       <View style={styles.box}>
       <View style={styles.doctorContainer}>  
-      <Icon name='user-md' size={40} color='blue' style={styles.icons} />
+      <Icon name='user-md' size={40} color='#800080'  />
       <Text style={styles.doctorName}>Dr. John Smith</Text>
-      <TextInput
-         placeholder='Dermetologist' 
-         />
-         <Icon name='star' color='gold'>4.5</Icon>
+      <Text style={styles.field}>Dermetologist</Text>
+         <Icon name='star' color='gold' style={styles.rates}> 4.5</Icon>
       </View>
      
       <View style={styles.doctorContainer}>
-      <Icon name='user-nurse' size={40} color='blue' style={styles.icons} />
+      <Icon name='user-nurse' size={40} color='#800080'  />
         <Text style={styles.doctorName}>Dr. Anna Dinn</Text>
-        <TextInput
-         placeholder='psychologist' 
-         />
-         <Icon name='star' color='gold'>5</Icon>
+        <Text style={styles.field}>psychologist </Text>
+         
+         <Icon name='star' color='gold' style={styles.rates}> 5</Icon>
       </View>
 
       <View style={styles.doctorContainer}>
-      <Icon name='user-nurse' size={40} color='blue' style={styles.icons} />
+      <Icon name='user-nurse' size={40} color='#800080'  />
         <Text style={styles.doctorName}>Dr. Angel Ray  </Text>
-       <TextInput
-         placeholder='Therapist' 
-         />
-         <Icon name='star' color='gold'>4.5</Icon>
+       
+         
+        <Text style={styles.field} > Therapist</Text>
+         
+         <Icon name='star' color='gold' style={styles.rates}> 4.5</Icon>
       </View>
 
       <View style={styles.doctorContainer}>
-      <Icon name='user-md' size={40} color='blue' style={styles.icons} />
+      <Icon name='user-md' size={40} color='#800080'  />
         <Text style={styles.doctorName}>Dr.chris Bronte</Text>
-        <TextInput
-         placeholder='Dentist' 
-         /> 
-         <Icon name='star' color='gold'>4</Icon>
+      
+        <Text style={styles.field}>Dentist</Text>
+         
+         <Icon name='star' color='gold' style={styles.rates}> 4</Icon>
       </View>
       </View>
     </View>
@@ -97,9 +95,6 @@ export default function App() {
 const styles = StyleSheet.create({
   parentContainer: {
     flex: 1,
-    backgroundColor: 'pink',
-    padding: 20,
-    borderRadius: 20,
     width: '100%',
     
     
@@ -107,7 +102,7 @@ const styles = StyleSheet.create({
   icon: {
     position: 'absolute',
     left: 7,
-   marginTop: 85,
+   marginTop: 87                          ,
   
   },
   
@@ -122,19 +117,22 @@ const styles = StyleSheet.create({
     color: 'black', // Adjusted text color for better visibility
     textAlign: 'left',
     paddingLeft: 30,
-  
   },
   label: {
     color: 'black', // Adjusted label color
     marginVertical: 10,
     fontSize: 18,
+    marginTop: 10,
+    padding:10,
   },
   box:
   {
 flexDirection:'row',
 flexWrap: 'wrap',
-justifyContent: 'space-around'
+justifyContent: 'space-around',
+marginTop:40,
   },
+
   doctorContainer: {
     
     backgroundColor: 'white',
@@ -142,16 +140,32 @@ justifyContent: 'space-around'
     borderWidth: 1,
     marginBottom: 10,
     width: '50%', // Full width
-    padding: 30,
+    padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
 
   },
   doctorName: {
     color: 'black',
-    fontSize: 16,
-    padding: 15,
+    fontSize: 11,
+    padding: 10,
+    fontWeight:'bold',
+    
      
   },
+  rates:
+  {
+  backgroundColor:'#800080',
+  borderRadius: 50,
+  width:55,
+  height:30,
+padding:9,
+margin:10,
+textAlign:'center',
+  },
+  field:
+  {
+color: 'gray',
+  },
   
-});
+})
